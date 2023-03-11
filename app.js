@@ -12,8 +12,8 @@ import { all } from './lib/commands/all.js'
 import { put } from './lib/commands/put.js'
 
 const program = new Command();
-const VERSION = JSON.parse(fs.readFileSync('package.json', 'utf8'))['version']
-const DESCRIPTION = JSON.parse(fs.readFileSync('package.json', 'utf8'))['description']
+const VERSION = "0.5.1"
+const DESCRIPTION = "MemoDOC is a small cli program for memorizing and outputting specific commands very quickly. No more scrolling for hours in the documentation"
 
 program
   .name('memodoc')
