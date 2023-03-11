@@ -1,0 +1,28 @@
+{
+  "name": "memo-doc",
+  "version": "0.5.0",
+  "description": "memo-doc is a small cli program for memorizing and outputting specific commands very quickly. No more scrolling for hours in the documentation",
+  "type": "module",
+  "preferGlobal": true,
+  "exports": "./app.js",
+  "node": ">=14.16",
+  "main": "./app.js",
+  "bin": "./app.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bastien-nizart/memo-doc.git"
+  },
+  "author": "Bastien <bastien@nizart.me> (https://bastien@nizart.me)",
+  "license": "MIT",
+  "dependencies": {
+    "clipboardy": "^3.0.0",
+    "colors": "^1.4.0",
+    "commander": "^10.0.0",
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.1.4"
+  }
+}
