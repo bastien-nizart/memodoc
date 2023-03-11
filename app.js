@@ -16,7 +16,7 @@ const VERSION = JSON.parse(fs.readFileSync('package.json', 'utf8'))['version']
 const DESCRIPTION = JSON.parse(fs.readFileSync('package.json', 'utf8'))['description']
 
 program
-  .name('memocli')
+  .name('memodoc')
   .description(DESCRIPTION)
   .version(VERSION, '-v, --version', 'output the current version');
 

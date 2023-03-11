@@ -1,7 +1,7 @@
 {
-  "name": "memocli",
+  "name": "memodoc",
   "version": "0.5.0",
-  "description": "MemoCLI is a small cli program for memorizing and outputting specific commands very quickly. No more scrolling for hours in the documentation",
+  "description": "MemoDOC is a small cli program for memorizing and outputting specific commands very quickly. No more scrolling for hours in the documentation",
   "type": "module",
   "preferGlobal": true,
   "exports": "./app.js",
