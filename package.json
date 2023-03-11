@@ -1,7 +1,7 @@
 {
-  "name": "memo-doc",
+  "name": "memocli",
   "version": "0.5.0",
-  "description": "memo-doc is a small cli program for memorizing and outputting specific commands very quickly. No more scrolling for hours in the documentation",
+  "description": "MemoCLI is a small cli program for memorizing and outputting specific commands very quickly. No more scrolling for hours in the documentation",
   "type": "module",
   "preferGlobal": true,
   "exports": "./app.js",
@@ -14,7 +14,7 @@
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bastien-nizart/memo-doc.git"
+    "url": "https://github.com/bastien-nizart/memocli.git"
   },
   "author": "Bastien <bastien@nizart.me> (https://bastien@nizart.me)",
   "license": "MIT",
