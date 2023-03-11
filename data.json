@@ -1,1 +1,1 @@
-{}
+{"angular":{"create.component":{"description":"","command":"ng g c -s -t --skip-tests --flat film-details"}}}
