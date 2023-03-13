@@ -12,7 +12,7 @@ import { all } from './lib/commands/all.js'
 import { put } from './lib/commands/put.js'
 
 const program = new Command();
-const VERSION = "0.5.6"
+const VERSION = "0.5.7"
 const DESCRIPTION = "MemoDOC is a small cli program for memorizing and outputting specific commands very quickly. No more scrolling for hours in the documentation"
 
 program
