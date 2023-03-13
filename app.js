@@ -27,12 +27,12 @@ program.command('all')
 
 program.command('book <name>')
     .alias('b')
-    .description('Show content of a specific book')
+    .description('Show content of a specific book. If this book does not exist, it will be created')
     .action(function (name) {book(name)});
 
 program.command('put <book> [key]')
     .alias('p')
-    .description('Put command in specific book')
+    .description('Put command in specific book. If this book does not exist, it will be created')
     .action(function (book, key) {put(book, key)});
 
 program.command('copy <book> [key]')
