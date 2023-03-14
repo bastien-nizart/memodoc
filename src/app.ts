@@ -67,7 +67,3 @@ program.command('delete <book> [key]')
     .action(function() { reset() });
 
 program.parse(process.argv);
-
-/*
-[{"name":"angular","memos":[{"key":"create.component","command":"ng g c -s","description":""}]},{"name":"test","memos":[]}]
-*/
