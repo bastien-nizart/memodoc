@@ -1,13 +1,13 @@
 {
   "name": "memodoc",
-  "version": "0.5.8",
+  "version": "1.0.0",
   "description": "MemoDOC is a small cli program for memorizing and outputting specific commands very quickly. No more scrolling for hours in the documentation",
   "type": "module",
   "preferGlobal": true,
   "exports": "./app.js",
   "node": ">=14.16",
-  "main": "./app.js",
-  "bin": "./app.js",
+  "main": "./out/app.js",
+  "bin": "./out/app.js",
   "scripts": {
     "start": "node ."
   },
@@ -24,5 +24,9 @@
     "commander": "^10.0.0",
     "fs": "^0.0.1-security",
     "inquirer": "^9.1.4"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.3",
+    "typescript": "^4.9.5"
   }
 }
