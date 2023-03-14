@@ -1,9 +1,11 @@
 import inquirer from 'inquirer';
 import chalk from 'chalk'
-import { create_book, DATA } from '../data.js'
 
-export function book(name) {
-    if (!(name in DATA)) {
+import { DATA } from '../app.js'
+import { Book } from '../Book.js'
+
+export function add_book(name: string): boolean {
+    if (!(DATA.containBook(name))) {
         console.log(chalk.redBright(`The ${name} book does not exist`))
         inquirer
             .prompt([
@@ -16,14 +18,23 @@ export function book(name) {
             ])
             .then((answer) => {
                 if (answer.create_book) {
-                    create_book(name)
+                    DATA.addBook(new Book(name))
                 }
             });
         return false
     }
+
+    let book: Book = DATA.getBook(name)
     
     console.log(chalk.blueBright(name + ' : '))
-    Object.entries(DATA[name]).forEach(function([id, content]) {
-        console.log(`${id} -> ${chalk.bold(content['command'])}`);
-    });
+
+    if (book.isEmpty()) {
+        console.log(chalk.grey('empty'))
+    } 
+
+    for(let memo of book.getMemos()) {
+        console.log(`${memo['key']} -> ${chalk.bold(memo['command'])}`);
+    }
+
+    return true;
 }

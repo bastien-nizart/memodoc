@@ -1,12 +1,17 @@
 import inquirer from 'inquirer';
 import chalk from 'chalk'
-import fs from 'fs';
-import { create_book, DATA, DATA_PATH } from '../data.js'
 
-export async function put(book, key) {
-    if (!(book in DATA)) {
-        create_book(book)
+import { DATA } from '../app.js'
+import { Book } from '../Book.js'
+import { Memo } from '../Memo.js'
+
+export async function put(bookName: string, key: string): Promise<boolean> {
+    if (!(DATA.containBook(bookName))) {
+        DATA.addBook(new Book(bookName))
+        console.log(chalk.greenBright(`Successfully created book`))
     }
+
+    const book: Book = DATA.getBook(bookName);
     let answers
     let command
 
@@ -28,9 +33,7 @@ export async function put(book, key) {
     
     command = answers.command;
 
-    DATA[book][key] = {
-        "description": "",
-        "command": command
-    }
-    fs.writeFileSync(DATA_PATH, JSON.stringify(DATA))
+    book.addMemo(new Memo(key, command))
+    DATA.saveChange()
+    return true;
 }
