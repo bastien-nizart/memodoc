@@ -67,4 +67,8 @@ program.command('delete-book <book>')
     .description('Delete book and all content')
     .action(function (book) {delete_book(book)});
 
+program.command('reset')
+    .description('Reset all data stored in this app')
+    .action(function() { reset() });
+
 program.parse(process.argv);
