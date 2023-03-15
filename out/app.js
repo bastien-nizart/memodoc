@@ -2,8 +2,7 @@
 import fs from 'fs';
 import os from 'os';
 import { Command } from 'commander';
-import { delete_command } from './commands/delete.js';
-import { reset } from './commands/reset.js';
+import { delete_command, delete_book } from './commands/delete.js';
 import { add_book } from './commands/book.js';
 import { copy } from './commands/copy.js';
 import { all } from './commands/all.js';
@@ -50,7 +49,8 @@ program.command('delete <book> [key]')
     .alias('del')
     .description('Delete specific command')
     .action(function (book, key) { delete_command(book, key); });
-program.command('reset')
-    .description('Reset all data stored in this app')
-    .action(function () { reset(); });
+program.command('delete-book <book>')
+    .alias('delbook')
+    .description('Delete book and all content')
+    .action(function (book) { delete_book(book); });
 program.parse(process.argv);

@@ -35,3 +35,14 @@ export async function delete_command(bookName: string, key: string): Promise<boo
     DATA.saveChange()
     return true;
 }
+
+export function delete_book(bookName: string): boolean {
+    if (!(DATA.containBook(bookName))) {
+        console.log(chalk.redBright(`The ${bookName} book does not exist`))
+        return false
+    }
+
+    DATA.deleteBook(bookName);
+    console.log(chalk.greenBright(`The ${bookName} is now deleted`))
+    return true;
+}

@@ -36,6 +36,16 @@ export class Collection {
         this.saveChange()
     }
 
+    public deleteBook(bookName: string): boolean {
+        if (!(this.containBook(bookName))) {
+            return false;
+        }
+
+        this.data = this.data.filter((book) => book.getName() !== bookName)
+        this.saveChange()
+        return true;
+    }
+
     public isEmpty(): boolean {
         return this.data.length == 0;
     }

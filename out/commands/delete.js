@@ -37,3 +37,13 @@ export function delete_command(bookName, key) {
         return true;
     });
 }
+export function delete_book(bookName) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!(DATA.containBook(bookName))) {
+            console.log(chalk.redBright(`The ${bookName} book does not exist`));
+            return false;
+        }
+        DATA.deleteBook(bookName);
+        return true;
+    });
+}

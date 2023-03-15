@@ -28,6 +28,14 @@ export class Collection {
         this.data.push(book);
         this.saveChange();
     }
+    deleteBook(bookName) {
+        if (!(this.containBook(bookName))) {
+            return false;
+        }
+        this.data = this.data.filter((book) => book.getName() !== bookName);
+        this.saveChange();
+        return true;
+    }
     isEmpty() {
         return this.data.length == 0;
     }
