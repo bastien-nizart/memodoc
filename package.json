@@ -1,6 +1,6 @@
 {
   "name": "memodoc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MemoDOC is a small cli program for memorizing and outputting specific commands very quickly. No more scrolling for hours in the documentation",
   "type": "module",
   "preferGlobal": true,

@@ -13,7 +13,7 @@ import { put } from './commands/put.js'
 import { Collection } from './Collection.js'
 
 const program: Command = new Command();
-const VERSION: string = "1.0.0"
+const VERSION: string = "1.0.1"
 const DESCRIPTION: string = "MemoDOC is a small cli program for memorizing and outputting specific commands very quickly. No more scrolling for hours in the documentation"
 
 const APP_DIR: string = os.homedir() + '/.memodoc'
