@@ -10,7 +10,7 @@ import { all } from './commands/all.js';
 import { put } from './commands/put.js';
 import { Collection } from './Collection.js';
 const program = new Command();
-const VERSION = "1.0.1";
+const VERSION = "1.1.1";
 const DESCRIPTION = "MemoDOC is a small cli program for memorizing and outputting specific commands very quickly. No more scrolling for hours in the documentation";
 const APP_DIR = os.homedir() + '/.memodoc';
 export const DATA_PATH = APP_DIR + '/data.json';
