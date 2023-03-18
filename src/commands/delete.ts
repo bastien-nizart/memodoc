@@ -43,6 +43,6 @@ export function delete_book(bookName: string): boolean {
     }
 
     DATA.deleteBook(bookName);
-    console.log(chalk.greenBright(`The ${bookName} is now deleted`))
+    console.log(chalk.greenBright(`The ${bookName} book is now deleted`))
     return true;
 }
