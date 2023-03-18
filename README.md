@@ -1,13 +1,13 @@
 # MemoDOC
 Small cli program for memorizing and outputting specific commands very quickly.
 
-## Installation
+## 🚀 Installation
 
 ```bash
 npm install memodoc -g
 ```
 
-## Description
+## ✏️ Description
 
 This small cli program is designed for developers in study or who have just arrived in a company.
 The idea came to me in the second year of studying computer science. During an Angular pratique work.
@@ -18,7 +18,7 @@ The add of command is also done very quickly.
 
 ![presentation](https://thumbmail.nizart.me/projects/memodoc/presentation.gif)
 
-## Usage
+## 🧑‍💻 Usage
 
 ```
 memodoc --help
