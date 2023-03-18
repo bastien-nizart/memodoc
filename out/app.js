@@ -4,6 +4,7 @@ import os from 'os';
 import { Command } from 'commander';
 import { delete_command, delete_book } from './commands/delete.js';
 import { add_book } from './commands/book.js';
+import { reset } from './commands/reset.js';
 import { copy } from './commands/copy.js';
 import { all } from './commands/all.js';
 import { put } from './commands/put.js';
@@ -29,28 +30,35 @@ program
     .name('memodoc')
     .description(DESCRIPTION)
     .version(VERSION, '-v, --version', 'output the current version');
-program.command('all')
-    .alias('a')
+program.command('a')
+    .alias('all')
     .description('List all command saved in memo-cli')
     .action(function () { all(); });
-program.command('book <name>')
-    .alias('b')
+program.command('b <name>')
+    .alias('book')
     .description('Show content of a specific book. If this book does not exist, it will be created')
     .action(function (name) { add_book(name); });
-program.command('put <book> [key]')
-    .alias('p')
+program.command('p <book> [key]')
+    .alias('put')
     .description('Put command in specific book. If this book does not exist, it will be created')
     .action(function (book, key) { put(book, key); });
-program.command('copy <book> [key]')
-    .alias('cp')
+program.command('cp <book> [key]')
+    .alias('copy')
     .description('Copy specific command in your clipboard')
     .action(function (book, key) { copy(book, key); });
-program.command('delete <book> [key]')
-    .alias('del')
-    .description('Delete specific command')
-    .action(function (book, key) { delete_command(book, key); });
-program.command('delete-book <book>')
-    .alias('delbook')
-    .description('Delete book and all content')
-    .action(function (book) { delete_book(book); });
+program.command('d <book> [key]')
+    .alias('delete')
+    .option('-b, --book', 'Force delete book and all content', false)
+    .description('Delete specific command or complete book')
+    .action(function (book, key, options) {
+    if (options.book) {
+        delete_book(book);
+    }
+    else {
+        delete_command(book, key);
+    }
+});
+program.command('reset')
+    .description('Reset all data stored in this app')
+    .action(function () { reset(); });
 program.parse(process.argv);
